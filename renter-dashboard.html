@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Người thuê xe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-car-battery"></i>
+                <span>EV Rental</span>
+            </div>
+            <div class="nav-menu">
+                <a href="renter-dashboard.html" class="nav-link active">Trang chủ</a>
+                <a href="renter-booking.html" class="nav-link">Đặt xe</a>
+                <a href="renter-history.html" class="nav-link">Lịch sử</a>
+                <div class="nav-user">
+                    <div class="user-dropdown">
+                        <button class="user-btn">
+                            <i class="fas fa-user"></i>
+                            <span>Nguyễn Văn A</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="renter-profile.html"><i class="fas fa-user"></i> Hồ sơ</a>
+                            <a href="renter-settings.html"><i class="fas fa-cog"></i> Cài đặt</a>
+                            <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <div class="dashboard-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-menu">
+                    <a href="renter-dashboard.html" class="menu-item active">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="renter-booking.html" class="menu-item">
+                        <i class="fas fa-calendar-plus"></i>
+                        <span>Đặt xe</span>
+                    </a>
+                    <a href="renter-current-rental.html" class="menu-item">
+                        <i class="fas fa-car"></i>
+                        <span>Thuê hiện tại</span>
+                        <span class="badge">1</span>
+                    </a>
+                    <a href="renter-history.html" class="menu-item">
+                        <i class="fas fa-history"></i>
+                        <span>Lịch sử thuê</span>
+                    </a>
+                    <a href="renter-profile.html" class="menu-item">
+                        <i class="fas fa-user"></i>
+                        <span>Hồ sơ cá nhân</span>
+                    </a>
+                    <a href="renter-documents.html" class="menu-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Giấy tờ</span>
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="content-header">
+                    <h1>Dashboard</h1>
+                    <p>Chào mừng trở lại, Nguyễn Văn A!</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>1</h3>
+                            <p>Xe đang thuê</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>15</h3>
+                            <p>Lần thuê trước</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>245</h3>
+                            <p>Km đã đi</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>2,450,000đ</h3>
+                            <p>Tổng chi phí</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Rental -->
+                <div class="content-section">
+                    <h2>Thuê xe hiện tại</h2>
+                    <div class="current-rental-card">
+                        <div class="rental-info">
+                            <div class="car-image">
+                                <i class="fas fa-car-battery"></i>
+                            </div>
+                            <div class="car-details">
+                                <h3>VinFast VF e34</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Trạm Trung tâm thành phố</p>
+                                <p><i class="fas fa-battery-three-quarters"></i> Pin: 85%</p>
+                                <p><i class="fas fa-clock"></i> Thuê từ: 09:00, 15/12/2024</p>
+                                <p><i class="fas fa-route"></i> Đã đi: 45 km</p>
+                            </div>
+                        </div>
+                        <div class="rental-actions">
+                            <button class="btn btn-outline">
+                                <i class="fas fa-map"></i>
+                                Xem vị trí
+                            </button>
+                            <button class="btn btn-primary">
+                                <i class="fas fa-undo"></i>
+                                Trả xe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="content-section">
+                    <h2>Thao tác nhanh</h2>
+                    <div class="quick-actions-grid">
+                        <a href="renter-booking.html" class="quick-action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-calendar-plus"></i>
+                            </div>
+                            <h3>Đặt xe mới</h3>
+                            <p>Thuê xe cho chuyến đi tiếp theo</p>
+                        </a>
+                        <a href="renter-history.html" class="quick-action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-receipt"></i>
+                            </div>
+                            <h3>Xem hóa đơn</h3>
+                            <p>Lịch sử thanh toán và hóa đơn</p>
+                        </a>
+                        <a href="renter-profile.html" class="quick-action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-id-card"></i>
+                            </div>
+                            <h3>Cập nhật giấy tờ</h3>
+                            <p>Gia hạn giấy phép lái xe</p>
+                        </a>
+                        <a href="#" class="quick-action-card">
+                            <div class="action-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3>Hỗ trợ</h3>
+                            <p>Liên hệ tư vấn 24/7</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="content-section">
+                    <h2>Hoạt động gần đây</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Bắt đầu thuê xe</h4>
+                                <p>VinFast VF e34 tại Trạm Trung tâm thành phố</p>
+                                <span class="activity-time">2 giờ trước</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Thanh toán thành công</h4>
+                                <p>Phí thuê xe: 150,000đ</p>
+                                <span class="activity-time">1 ngày trước</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-undo"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Trả xe</h4>
+                                <p>VinFast VF e34 tại Trạm Khu đại học</p>
+                                <span class="activity-time">3 ngày trước</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

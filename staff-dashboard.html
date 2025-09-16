@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Nhân viên trạm</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-car-battery"></i>
+                <span>EV Rental - Staff</span>
+            </div>
+            <div class="nav-menu">
+                <a href="staff-dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="staff-handover.html" class="nav-link">Giao nhận xe</a>
+                <a href="staff-vehicles.html" class="nav-link">Quản lý xe</a>
+                <a href="staff-payments.html" class="nav-link">Thanh toán</a>
+                <div class="nav-user">
+                    <div class="user-dropdown">
+                        <button class="user-btn">
+                            <i class="fas fa-user"></i>
+                            <span>Nguyễn Thị B</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="staff-profile.html"><i class="fas fa-user"></i> Hồ sơ</a>
+                            <a href="staff-settings.html"><i class="fas fa-cog"></i> Cài đặt</a>
+                            <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <div class="dashboard-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h3>Trạm Trung tâm TP</h3>
+                    <p>Nhân viên: Nguyễn Thị B</p>
+                </div>
+                <div class="sidebar-menu">
+                    <a href="staff-dashboard.html" class="menu-item active">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="staff-handover.html" class="menu-item">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Giao nhận xe</span>
+                        <span class="badge">3</span>
+                    </a>
+                    <a href="staff-vehicles.html" class="menu-item">
+                        <i class="fas fa-car"></i>
+                        <span>Quản lý xe</span>
+                    </a>
+                    <a href="staff-customers.html" class="menu-item">
+                        <i class="fas fa-users"></i>
+                        <span>Khách hàng</span>
+                    </a>
+                    <a href="staff-payments.html" class="menu-item">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Thanh toán</span>
+                    </a>
+                    <a href="staff-reports.html" class="menu-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Báo cáo</span>
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="content-header">
+                    <h1>Dashboard Nhân viên</h1>
+                    <p>Quản lý hoạt động tại trạm Trung tâm thành phố</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>15</h3>
+                            <p>Xe có sẵn</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>8</h3>
+                            <p>Đang thuê</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>23</h3>
+                            <p>Giao nhận hôm nay</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>2,450,000đ</h3>
+                            <p>Doanh thu hôm nay</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pending Actions -->
+                <div class="content-section">
+                    <h2>Thao tác cần thực hiện</h2>
+                    <div class="pending-actions">
+                        <div class="pending-item urgent">
+                            <div class="pending-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div class="pending-content">
+                                <h4>Giao xe cho Nguyễn Văn A</h4>
+                                <p>VinFast VF e34 - Đặt trước lúc 10:00</p>
+                                <span class="pending-time">5 phút nữa</span>
+                            </div>
+                            <div class="pending-actions">
+                                <button class="btn btn-primary btn-sm">Xử lý ngay</button>
+                            </div>
+                        </div>
+                        <div class="pending-item">
+                            <div class="pending-icon">
+                                <i class="fas fa-undo"></i>
+                            </div>
+                            <div class="pending-content">
+                                <h4>Nhận xe từ Trần Thị C</h4>
+                                <p>VinFast VF e35 - Dự kiến 11:30</p>
+                                <span class="pending-time">1 giờ 20 phút nữa</span>
+                            </div>
+                            <div class="pending-actions">
+                                <button class="btn btn-outline btn-sm">Chuẩn bị</button>
+                            </div>
+                        </div>
+                        <div class="pending-item">
+                            <div class="pending-icon">
+                                <i class="fas fa-battery-quarter"></i>
+                            </div>
+                            <div class="pending-content">
+                                <h4>Sạc xe VF e32</h4>
+                                <p>Pin hiện tại: 15% - Cần sạc gấp</p>
+                                <span class="pending-time">Đang chờ</span>
+                            </div>
+                            <div class="pending-actions">
+                                <button class="btn btn-warning btn-sm">Sạc ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle Status -->
+                <div class="content-section">
+                    <h2>Tình trạng xe tại trạm</h2>
+                    <div class="vehicle-grid">
+                        <div class="vehicle-card available">
+                            <div class="vehicle-icon">
+                                <i class="fas fa-car-battery"></i>
+                            </div>
+                            <div class="vehicle-info">
+                                <h4>VF e34</h4>
+                                <p><i class="fas fa-battery-full"></i> Pin: 95%</p>
+                                <p><i class="fas fa-tools"></i> Tốt</p>
+                                <span class="status-badge available">Có sẵn</span>
+                            </div>
+                        </div>
+                        <div class="vehicle-card rented">
+                            <div class="vehicle-icon">
+                                <i class="fas fa-car-battery"></i>
+                            </div>
+                            <div class="vehicle-info">
+                                <h4>VF e35</h4>
+                                <p><i class="fas fa-battery-three-quarters"></i> Pin: 78%</p>
+                                <p><i class="fas fa-user"></i> Nguyễn Văn A</p>
+                                <span class="status-badge rented">Đang thuê</span>
+                            </div>
+                        </div>
+                        <div class="vehicle-card charging">
+                            <div class="vehicle-icon">
+                                <i class="fas fa-car-battery"></i>
+                            </div>
+                            <div class="vehicle-info">
+                                <h4>VF e36</h4>
+                                <p><i class="fas fa-battery-half"></i> Pin: 45%</p>
+                                <p><i class="fas fa-bolt"></i> Đang sạc</p>
+                                <span class="status-badge charging">Đang sạc</span>
+                            </div>
+                        </div>
+                        <div class="vehicle-card maintenance">
+                            <div class="vehicle-icon">
+                                <i class="fas fa-car-battery"></i>
+                            </div>
+                            <div class="vehicle-info">
+                                <h4>VF e37</h4>
+                                <p><i class="fas fa-wrench"></i> Bảo dưỡng</p>
+                                <p><i class="fas fa-calendar"></i> 2 ngày</p>
+                                <span class="status-badge maintenance">Bảo dưỡng</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Transactions -->
+                <div class="content-section">
+                    <h2>Giao dịch gần đây</h2>
+                    <div class="transactions-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Thời gian</th>
+                                    <th>Khách hàng</th>
+                                    <th>Loại</th>
+                                    <th>Xe</th>
+                                    <th>Số tiền</th>
+                                    <th>Trạng thái</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>09:15</td>
+                                    <td>Nguyễn Văn A</td>
+                                    <td>Giao xe</td>
+                                    <td>VF e34</td>
+                                    <td>150,000đ</td>
+                                    <td><span class="status-success">Hoàn thành</span></td>
+                                </tr>
+                                <tr>
+                                    <td>08:45</td>
+                                    <td>Trần Thị C</td>
+                                    <td>Nhận xe</td>
+                                    <td>VF e35</td>
+                                    <td>120,000đ</td>
+                                    <td><span class="status-success">Hoàn thành</span></td>
+                                </tr>
+                                <tr>
+                                    <td>08:20</td>
+                                    <td>Lê Văn D</td>
+                                    <td>Giao xe</td>
+                                    <td>VF e36</td>
+                                    <td>180,000đ</td>
+                                    <td><span class="status-pending">Đang xử lý</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Quản trị viên</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-car-battery"></i>
+                <span>EV Rental - Admin</span>
+            </div>
+            <div class="nav-menu">
+                <a href="admin-dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="admin-fleet.html" class="nav-link">Quản lý đội xe</a>
+                <a href="admin-stations.html" class="nav-link">Quản lý trạm</a>
+                <a href="admin-customers.html" class="nav-link">Khách hàng</a>
+                <a href="admin-staff.html" class="nav-link">Nhân viên</a>
+                <a href="admin-reports.html" class="nav-link">Báo cáo</a>
+                <div class="nav-user">
+                    <div class="user-dropdown">
+                        <button class="user-btn">
+                            <i class="fas fa-user-shield"></i>
+                            <span>Admin User</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="admin-profile.html"><i class="fas fa-user"></i> Hồ sơ</a>
+                            <a href="admin-settings.html"><i class="fas fa-cog"></i> Cài đặt</a>
+                            <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <div class="dashboard-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h3>Hệ thống quản trị</h3>
+                    <p>Quản lý toàn bộ hệ thống</p>
+                </div>
+                <div class="sidebar-menu">
+                    <a href="admin-dashboard.html" class="menu-item active">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="admin-fleet.html" class="menu-item">
+                        <i class="fas fa-car"></i>
+                        <span>Quản lý đội xe</span>
+                    </a>
+                    <a href="admin-stations.html" class="menu-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Quản lý trạm</span>
+                    </a>
+                    <a href="admin-customers.html" class="menu-item">
+                        <i class="fas fa-users"></i>
+                        <span>Khách hàng</span>
+                    </a>
+                    <a href="admin-staff.html" class="menu-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Nhân viên</span>
+                    </a>
+                    <a href="admin-reports.html" class="menu-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Báo cáo & Phân tích</span>
+                    </a>
+                    <a href="admin-settings.html" class="menu-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Cài đặt hệ thống</span>
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="content-header">
+                    <h1>Dashboard Quản trị</h1>
+                    <p>Tổng quan hệ thống EV Rental</p>
+                </div>
+
+                <!-- Overview Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>48</h3>
+                            <p>Tổng số xe</p>
+                            <span class="stat-change positive">+2 tháng này</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>5</h3>
+                            <p>Trạm hoạt động</p>
+                            <span class="stat-change">Không đổi</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>1,247</h3>
+                            <p>Khách hàng</p>
+                            <span class="stat-change positive">+45 tuần này</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>12,450,000đ</h3>
+                            <p>Doanh thu hôm nay</p>
+                            <span class="stat-change positive">+15%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Alerts -->
+                <div class="content-section">
+                    <h2>Cảnh báo hệ thống</h2>
+                    <div class="alerts-grid">
+                        <div class="alert-card warning">
+                            <div class="alert-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="alert-content">
+                                <h4>Pin thấp</h4>
+                                <p>3 xe có pin dưới 20% cần sạc gấp</p>
+                                <button class="btn btn-warning btn-sm">Xem chi tiết</button>
+                            </div>
+                        </div>
+                        <div class="alert-card error">
+                            <div class="alert-icon">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <div class="alert-content">
+                                <h4>Cần bảo dưỡng</h4>
+                                <p>2 xe đến hạn bảo dưỡng định kỳ</p>
+                                <button class="btn btn-danger btn-sm">Lên lịch</button>
+                            </div>
+                        </div>
+                        <div class="alert-card info">
+                            <div class="alert-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="alert-content">
+                                <h4>Nâng cấp hệ thống</h4>
+                                <p>Phiên bản mới v2.1.0 có sẵn</p>
+                                <button class="btn btn-info btn-sm">Cập nhật</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Station Performance -->
+                <div class="content-section">
+                    <h2>Hiệu suất các trạm</h2>
+                    <div class="performance-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Trạm</th>
+                                    <th>Xe có sẵn</th>
+                                    <th>Đang thuê</th>
+                                    <th>Doanh thu hôm nay</th>
+                                    <th>Hiệu suất</th>
+                                    <th>Trạng thái</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="station-info">
+                                            <strong>Trung tâm TP</strong>
+                                            <small>Nguyễn Huệ, Q1</small>
+                                        </div>
+                                    </td>
+                                    <td>15</td>
+                                    <td>8</td>
+                                    <td>3,200,000đ</td>
+                                    <td>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 85%"></div>
+                                            <span>85%</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-success">Hoạt động tốt</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="station-info">
+                                            <strong>Khu đại học</strong>
+                                            <small>Lê Văn Việt, Thủ Đức</small>
+                                        </div>
+                                    </td>
+                                    <td>8</td>
+                                    <td>5</td>
+                                    <td>2,100,000đ</td>
+                                    <td>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 72%"></div>
+                                            <span>72%</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-success">Hoạt động tốt</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="station-info">
+                                            <strong>Sân bay TSN</strong>
+                                            <small>Khu vực sân bay</small>
+                                        </div>
+                                    </td>
+                                    <td>25</td>
+                                    <td>18</td>
+                                    <td>4,500,000đ</td>
+                                    <td>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 95%"></div>
+                                            <span>95%</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-excellent">Xuất sắc</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Revenue Chart Placeholder -->
+                <div class="content-section">
+                    <h2>Biểu đồ doanh thu</h2>
+                    <div class="chart-container">
+                        <div class="chart-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                            <p>Biểu đồ doanh thu theo thời gian</p>
+                            <small>Dữ liệu sẽ được hiển thị tại đây</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activities -->
+                <div class="content-section">
+                    <h2>Hoạt động gần đây</h2>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Thêm xe mới</h4>
+                                <p>VinFast VF e38 đã được thêm vào trạm Trung tâm TP</p>
+                                <span class="activity-time">2 giờ trước</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Thêm nhân viên</h4>
+                                <p>Nguyễn Thị E đã được phân công tại trạm Khu đại học</p>
+                                <span class="activity-time">4 giờ trước</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Cảnh báo pin thấp</h4>
+                                <p>Xe VF e32 tại trạm Sân bay có pin 15%</p>
+                                <span class="activity-time">6 giờ trước</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

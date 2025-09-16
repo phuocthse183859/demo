@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Station-based Rental System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-car-battery"></i>
+                <span>EV Rental</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Trang chủ</a>
+                <a href="#stations" class="nav-link">Điểm thuê</a>
+                <a href="#about" class="nav-link">Về chúng tôi</a>
+                <div class="nav-buttons">
+                    <button class="btn btn-outline" onclick="showLoginModal()">Đăng nhập</button>
+                    <button class="btn btn-primary" onclick="showRegisterModal()">Đăng ký</button>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Thuê xe điện thông minh</h1>
+                <p>Hệ thống thuê xe điện tại điểm thuê tiện lợi, nhanh chóng và an toàn</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-large" onclick="showRegisterModal()">
+                        <i class="fas fa-user-plus"></i>
+                        Bắt đầu thuê xe
+                    </button>
+                    <button class="btn btn-outline btn-large" onclick="scrollToSection('stations')">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Tìm điểm thuê
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="ev-car-placeholder">
+                    <i class="fas fa-car-battery"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2>Tại sao chọn EV Rental?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>100% Điện</h3>
+                        <p>Xe điện thân thiện với môi trường, tiết kiệm chi phí vận hành</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Thuê nhanh</h3>
+                        <p>Quy trình đơn giản, chỉ cần vài phút để bắt đầu hành trình</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3>Nhiều điểm thuê</h3>
+                        <p>Mạng lưới điểm thuê rộng khắp, thuận tiện mọi lúc mọi nơi</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>An toàn</h3>
+                        <p>Bảo hiểm đầy đủ, hỗ trợ 24/7, đảm bảo an toàn tuyệt đối</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stations Section -->
+        <section id="stations" class="stations">
+            <div class="container">
+                <h2>Điểm thuê xe</h2>
+                <div class="stations-grid">
+                    <div class="station-card">
+                        <div class="station-image">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="station-info">
+                            <h3>Trung tâm thành phố</h3>
+                            <p><i class="fas fa-map-marker-alt"></i> 123 Nguyễn Huệ, Q1, TP.HCM</p>
+                            <p><i class="fas fa-car"></i> 15 xe có sẵn</p>
+                            <p><i class="fas fa-battery-three-quarters"></i> Pin: 80-100%</p>
+                            <button class="btn btn-primary">Xem chi tiết</button>
+                        </div>
+                    </div>
+                    <div class="station-card">
+                        <div class="station-image">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="station-info">
+                            <h3>Khu đại học</h3>
+                            <p><i class="fas fa-map-marker-alt"></i> 456 Lê Văn Việt, Thủ Đức</p>
+                            <p><i class="fas fa-car"></i> 8 xe có sẵn</p>
+                            <p><i class="fas fa-battery-half"></i> Pin: 60-90%</p>
+                            <button class="btn btn-primary">Xem chi tiết</button>
+                        </div>
+                    </div>
+                    <div class="station-card">
+                        <div class="station-image">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <div class="station-info">
+                            <h3>Sân bay Tân Sơn Nhất</h3>
+                            <p><i class="fas fa-map-marker-alt"></i> Khu vực sân bay, TP.HCM</p>
+                            <p><i class="fas fa-car"></i> 25 xe có sẵn</p>
+                            <p><i class="fas fa-battery-full"></i> Pin: 90-100%</p>
+                            <button class="btn btn-primary">Xem chi tiết</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Đăng nhập</h2>
+                <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Mật khẩu</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userType">Loại tài khoản</label>
+                        <select id="userType" required>
+                            <option value="">Chọn loại tài khoản</option>
+                            <option value="renter">Người thuê xe</option>
+                            <option value="staff">Nhân viên trạm</option>
+                            <option value="admin">Quản trị viên</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Đăng nhập</button>
+                </form>
+                <p class="modal-footer">
+                    Chưa có tài khoản? <a href="#" onclick="showRegisterModal()">Đăng ký ngay</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Đăng ký tài khoản</h2>
+                <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerName">Họ và tên</label>
+                        <input type="text" id="registerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" id="registerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPhone">Số điện thoại</label>
+                        <input type="tel" id="registerPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Mật khẩu</label>
+                        <input type="password" id="registerPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerUserType">Loại tài khoản</label>
+                        <select id="registerUserType" required>
+                            <option value="">Chọn loại tài khoản</option>
+                            <option value="renter">Người thuê xe</option>
+                            <option value="staff">Nhân viên trạm</option>
+                        </select>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <label for="agreeTerms">Tôi đồng ý với <a href="#">điều khoản sử dụng</a></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Đăng ký</button>
+                </form>
+                <p class="modal-footer">
+                    Đã có tài khoản? <a href="#" onclick="showLoginModal()">Đăng nhập ngay</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EV Rental</h3>
+                    <p>Hệ thống thuê xe điện thông minh, tiện lợi và thân thiện với môi trường.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên kết</h4>
+                    <ul>
+                        <li><a href="#">Về chúng tôi</a></li>
+                        <li><a href="#">Điều khoản</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="#">Hướng dẫn sử dụng</a></li>
+                        <li><a href="#">Câu hỏi thường gặp</a></li>
+                        <li><a href="#">Hotline: 1900-xxxx</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kết nối</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EV Rental System. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
